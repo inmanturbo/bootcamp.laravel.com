@@ -423,7 +423,7 @@ class ChirpController extends Controller
     {
         //
         $validated = $request->validate([// [tl! remove:-1,1 add:start]
-            'message' => 'required|string|max:255',
+            'message' => ['required', 'string', 'max:255'],
         ]);
 
         $request->user()->chirps()->create($validated);
